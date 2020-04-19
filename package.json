@@ -1,0 +1,27 @@
+{
+  "name": "jump-shot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch & live-server --port=8080 --entry-file=dist/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:velimd/Jump-Shot.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "velimd",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "live-server": "^1.2.1",
+    "phaser": "^3.22.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
