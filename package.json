@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack --watch & live-server --port=8080 --entry-file=src/index.html"
+    "start": "webpack --watch & live-server --port=3000 --watch=src/ --mount=/:src"
   },
   "repository": {
     "type": "git",
