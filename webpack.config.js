@@ -6,6 +6,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/app.js',
+  devServer: {
+    contentBase: './dist',
+  },
   module: {
     rules: [
       {
@@ -13,10 +16,6 @@ module.exports = {
         exclude: /node_modules/,
       }
     ],
-  },
-  output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -26,5 +25,9 @@ module.exports = {
     new CopyPlugin([
       { from: 'src/assets', to: 'assets' }
     ]),
-  ]
+  ],
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'dist'),
+  }
 };
