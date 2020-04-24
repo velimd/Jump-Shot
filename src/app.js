@@ -1,6 +1,8 @@
 const Phaser = require('phaser');
 
-const { MainScene } = require('./scenes/main.scene')
+const { BootScene } = require('./scenes/boot.scene');
+const { MainScene } = require('./scenes/main.scene');
+
 const config = {
     type: Phaser.AUTO,
     width: 800,
@@ -12,7 +14,7 @@ const config = {
             debug: false
         }
     },
-    scene: [MainScene]
+    scene: [BootScene, MainScene]
 };
 
 const game = new Phaser.Game(config);
