@@ -87,7 +87,13 @@ export class MainScene extends Scene {
         this.background.tilePositionX = this.camera.scrollX * 0.4;
         const cursors = this.input.keyboard.createCursorKeys();
 
-        if (cursors.left.isDown) {
+        if (cursors.up.isDown && this.player.body.touching.down) {
+            this.player.setVelocityY(-250);
+            this.player.anims.play('jump');
+        } else if (cursors.down.isDown && this.player.body.touching.down) {
+            this.player.anims.play('crouch');
+            this.player.setVelocityX(0);
+        } else if (cursors.left.isDown) {
             this.player.setVelocityX(-160);
             this.player.flipX = true
             this.player.anims.play('run', true);
@@ -95,11 +101,6 @@ export class MainScene extends Scene {
             this.player.setVelocityX(160);
             this.player.flipX = false
             this.player.anims.play('run', true);
-        } else if (cursors.up.isDown && this.player.body.touching.down) {
-            this.player.setVelocityY(-250);
-            this.player.anims.play('jump');
-        } else if (cursors.down.isDown && this.player.body.touching.down && this.player.body.velocity.x === 0) {
-            this.player.anims.play('crouch');
         } else {
             this.player.setVelocityX(0);
             this.player.anims.play('idle');
