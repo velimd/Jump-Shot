@@ -3,6 +3,13 @@ const Phaser = require('phaser');
 const { BootScene } = require('./scenes/boot.scene');
 const { MainScene } = require('./scenes/main.scene');
 
+
+// Need to config it so it can be used in scenes
+// const gameSettings = {
+//     playerRunSpeed: 160,
+//     playerJumpSpeed: 250
+// }
+
 const config = {
     type: Phaser.AUTO,
     width: 800,
